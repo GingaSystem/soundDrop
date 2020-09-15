@@ -362,12 +362,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spectrum: {fileID: 79453362}
   cubes:
-  - {fileID: 392144549}
-  - {fileID: 1631230617}
-  - {fileID: 1519418024}
-  - {fileID: 1980301974}
-  - {fileID: 1285029003}
-  scale: 0
+  - {fileID: 392144545}
+  - {fileID: 1631230613}
+  - {fileID: 1519418020}
+  - {fileID: 1980301970}
+  - {fileID: 1285028999}
+  scale: 100
+  micON: 1
 --- !u!1001 &223974226
 PrefabInstance:
   m_ObjectHideFlags: 0
