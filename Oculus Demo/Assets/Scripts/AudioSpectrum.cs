@@ -39,6 +39,7 @@ public class AudioSpectrum : MonoBehaviour
     public BandType bandType = BandType.TenBand;
     public float fallSpeed = 0.08f;
     public float sensibility = 8.0f;
+    public AudioSource audioSource = null;
     #endregion
 
     #region Private variables
@@ -93,7 +94,8 @@ public class AudioSpectrum : MonoBehaviour
     {
         CheckBuffers ();
 
-        AudioListener.GetSpectrumData (rawSpectrum, 0, FFTWindow.BlackmanHarris);
+        //AudioListener.GetSpectrumData (rawSpectrum, 0, FFTWindow.BlackmanHarris);
+        audioSource.GetSpectrumData(rawSpectrum, 0, FFTWindow.BlackmanHarris);
 
         float[] middlefrequencies = middleFrequenciesForBands [(int)bandType];
         var bandwidth = bandwidthForBands [(int)bandType];
