@@ -9,6 +9,7 @@ public class CubeRotator : MonoBehaviour
     private float timeElapsed;
     public AudioSpectrum spectrum;
     public float scale;
+    
 
 
     // Start is called before the first frame update
@@ -35,8 +36,9 @@ public class CubeRotator : MonoBehaviour
 
         for (int i = 0; i < transform.childCount; i++) {
             Transform child = transform.GetChild(i);
-            float rotCube = timeElapsed * 80 * (i+1)/5 % 360; //箱ごとに違う速さ
-            //float rotCube = (timeElapsed * 80 * spectrum.Levels[i] * scale) % 360;
+            
+            //float rotCube = timeElapsed * 80 * (i+1)/5 % 360; //箱ごとに違う速さ
+            float rotCube = (timeElapsed * 80 * spectrum.Levels[i] * scale) % 360;
             child.rotation = Quaternion.Euler(rotCube, rotCube, rotCube);
         }
     }
