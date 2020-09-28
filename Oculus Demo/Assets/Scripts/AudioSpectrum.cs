@@ -95,7 +95,8 @@ public class AudioSpectrum : MonoBehaviour
         CheckBuffers ();
 
         //AudioListener.GetSpectrumData (rawSpectrum, 0, FFTWindow.BlackmanHarris);
-        audioSource.GetSpectrumData(rawSpectrum, 0, FFTWindow.BlackmanHarris);
+        AudioSource audioSource1 = audioSource;
+        audioSource1.GetSpectrumData(rawSpectrum, 0, FFTWindow.BlackmanHarris);
 
         float[] middlefrequencies = middleFrequenciesForBands [(int)bandType];
         var bandwidth = bandwidthForBands [(int)bandType];
