@@ -39,7 +39,7 @@ public class CubeRotator : MonoBehaviour
             
             //float rotCube = timeElapsed * 80 * (i+1)/5 % 360; //箱ごとに違う速さ
             float rotCube = (timeElapsed * 80 * spectrum.Levels[i] * scale) % 360;
-            child.rotation = Quaternion.Euler(rotCube, rotCube, rotCube);
+            child.rotation = transform.rotation * Quaternion.Euler(rotCube, rotCube, rotCube);
         }
     }
 }
