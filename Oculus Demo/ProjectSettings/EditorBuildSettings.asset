@@ -8,6 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 0
+    path: Assets/VrGrabber/Scenes/VrGrabber Example.unity
+    guid: 3ef7984c9ae84fb47996391660d92e3b
+  - enabled: 0
+    path: Assets/Scenes/New Scene.unity
+    guid: 1f6a56d1d67f14db9ab911f3e9464c6f
+  - enabled: 0
+    path: Assets/Oculus/SampleFramework/Usage/DistanceGrab.unity
+    guid: 24f58b3f0ca02d44eaec7f50bca538f2
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 8ab3c3c193a944f37acc1edc7e7be062,
       type: 2}

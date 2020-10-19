@@ -6,8 +6,8 @@
     // Webカメラ
     public class WebCam : MonoBehaviour
     {
-        private static int INPUT_SIZE = 256;
-        private static int FPS = 30;
+        //private static int INPUT_SIZE = 256;
+        //private static int FPS = 30;
 
         // UI
         RawImage rawImage;
