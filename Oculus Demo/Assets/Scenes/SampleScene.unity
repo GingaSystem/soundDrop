@@ -454,7 +454,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ca5f8f63779041c58f0c9917cd7d949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cube: {fileID: 1082166084}
+  testCube: {fileID: 1082166084}
+  cube: {fileID: 793535109}
+  cube2: {fileID: 1108452213}
+  cube3: {fileID: 1472591643}
+  cube4: {fileID: 1212083528}
+  cube5: {fileID: 759930070}
 --- !u!1 &102320354
 GameObject:
   m_ObjectHideFlags: 0
