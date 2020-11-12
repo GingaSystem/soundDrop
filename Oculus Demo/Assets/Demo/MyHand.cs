@@ -205,7 +205,11 @@ namespace OVRTouchSample
         private float m_collisionScaleCurrent = 0.0f;
 
         private void CollisionEnable(bool enabled)
+
         {
+            if (!enabled) {
+                return;//常時コリジョンを有効にする
+            }
             if (m_collisionEnabled == enabled)
             {
                 return;
@@ -213,6 +217,26 @@ namespace OVRTouchSample
             m_collisionEnabled = enabled;
 
             if (enabled)
+            {
+                m_collisionScaleCurrent = COLLIDER_SCALE_MAX;
+                for (int i = 0; i < m_colliders.Length; ++i)
+                {
+                    Collider collider = m_colliders[i];
+                    collider.transform.localScale = new Vector3(COLLIDER_SCALE_MAX, COLLIDER_SCALE_MAX, COLLIDER_SCALE_MAX);
+                    collider.enabled = true;
+                }
+            }
+            else
+            {
+                m_collisionScaleCurrent = COLLIDER_SCALE_MIN;
+                for (int i = 0; i < m_colliders.Length; ++i)
+                {
+                    Collider collider = m_colliders[i];
+                    collider.enabled = false;
+                    collider.transform.localScale = new Vector3(COLLIDER_SCALE_MIN, COLLIDER_SCALE_MIN, COLLIDER_SCALE_MIN);
+                }
+            }
+            /*if (enabled)
             {
                 m_collisionScaleCurrent = COLLIDER_SCALE_MIN;
                 for (int i = 0; i < m_colliders.Length; ++i)
@@ -231,7 +255,7 @@ namespace OVRTouchSample
                     collider.enabled = false;
                     collider.transform.localScale = new Vector3(COLLIDER_SCALE_MIN, COLLIDER_SCALE_MIN, COLLIDER_SCALE_MIN);
                 }
-            }
+            }*/
         }
     }
 }
