@@ -207,14 +207,8 @@ namespace OVRTouchSample
         private void CollisionEnable(bool enabled)
 
         {
-            if (!enabled) {
-                return;//常時コリジョンを有効にする
-            }
-            if (m_collisionEnabled == enabled)
-            {
-                return;
-            }
-            m_collisionEnabled = enabled;
+            // 常時コリジョンを有効にする
+            m_collisionEnabled = enabled = true;
 
             if (enabled)
             {
