@@ -10,16 +10,10 @@ public class ChangeMixerSetting : MonoBehaviour
     public GameObject cube3;
     public GameObject cube4;
     public GameObject cube5;
+
     // Start is called before the first frame update
     void Start()
     {
-
-
-
-
-
-
-
 
     }
 
