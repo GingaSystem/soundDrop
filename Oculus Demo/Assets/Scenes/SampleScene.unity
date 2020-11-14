@@ -674,7 +674,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 8235c834b111845ce95b3ec4c81210a4,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 18c4dec1bfc1240c9bc96095cb9cf6d6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7a6db5c95468148d1b157f46b1fbf963, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -11716,7 +11716,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 1
+    collisionMessages: 0
     collidesWithDynamic: 1
     interiorCollisions: 1
   TriggerModule:
@@ -12045,7 +12045,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.89411765, g: 0.89411765, b: 0.89411765, a: 1}
+      maxColor: {r: 1, g: 0, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
