@@ -1,37 +1,47 @@
 ﻿using System;
-using System.Collections;
 
 using UnityEngine;
 
-public class VibrationController
+public class VibrationController : MonoBehaviour
 {
-    private static long leftVibrationEndsAt = Int64.MaxValue;
-    private static long rightVibrationEndsAt = Int64.MaxValue;
+    private static long leftVibrationEndsAt = -1;
+    private static long rightVibrationEndsAt = -1;
 
-    public static IEnumerator VibrateLeftFor(float seconds)
+    public static void VibrateLeftFor(float seconds)
     {
-        leftVibrationEndsAt = DateTime.Now.Ticks + (long)(seconds * Math.Pow(10, 9));
-        return VibrationCoroutine(seconds, OVRInput.Controller.LTouch);
+        leftVibrationEndsAt = DateTime.Now.Ticks + (long)(seconds * 10000000);
     }
 
-    public static IEnumerator VibrateRightFor(float seconds)
+    public static void VibrateRightFor(float seconds)
     {
-        rightVibrationEndsAt = DateTime.Now.Ticks + (long)(seconds * Math.Pow(10, 9));
-        return VibrationCoroutine(seconds, OVRInput.Controller.RTouch);
+        rightVibrationEndsAt = DateTime.Now.Ticks + (long)(seconds * 10000000);
     }
 
-    private static IEnumerator VibrationCoroutine(float seconds, OVRInput.Controller controller)
+    void Update()
     {
+        var now = DateTime.Now.Ticks;
+
         // Turn on vibration
-        OVRInput.SetControllerVibration(1, 1, controller);
-        yield return new WaitForSeconds(seconds);
+        if (now <= leftVibrationEndsAt)
+        {
+            Debug.Log("turn on vibration left");
+            OVRInput.SetControllerVibration(1, 1, OVRInput.Controller.LTouch);
+        }
+        if (now <= rightVibrationEndsAt)
+        {
+            Debug.Log("turn onvibration right");
+            OVRInput.SetControllerVibration(1, 1, OVRInput.Controller.RTouch);
+        }
 
         // Turn off vibration
-        if (leftVibrationEndsAt <= DateTime.Now.Ticks) {
+        if (leftVibrationEndsAt <= now)
+        {
+            Debug.Log("turn off vibration left");
             OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.LTouch);
         }
-        if (rightVibrationEndsAt <= DateTime.Now.Ticks)
+        if (rightVibrationEndsAt <= now)
         {
+            Debug.Log("turn off vibration right");
             OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
         }
     }

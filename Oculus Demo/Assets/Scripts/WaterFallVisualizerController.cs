@@ -21,10 +21,20 @@ public class WaterFallVisualizerController : MonoBehaviour
         {
             GameObject wf = GameObject.Instantiate(tmpl, gameObject.transform);
             wf.name = "WaterFall" + i;
+
+            // --- position
             var pos = wf.transform.localPosition;
+
+            // (1) Line
+            /*
             pos.x = 1.5f * i;
             wf.transform.localPosition = pos;
+            */
 
+            // (2) Round
+            wf.transform.localPosition = Quaternion.Euler(0, 180.0f * ((float)i / spectrum.Levels.Length), 0 ) * wf.transform.localPosition;
+
+            // --- color
             var trailsModule = wf.GetComponent<ParticleSystem>().trails;
             var waterfallColor = trailsModule.colorOverTrail;
             waterfallColor.color = Color.HSVToRGB((float)(i) / spectrum.Levels.Length, 1, 1);

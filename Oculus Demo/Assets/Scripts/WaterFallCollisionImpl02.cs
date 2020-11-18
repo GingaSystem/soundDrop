@@ -27,14 +27,14 @@ public class WaterFallCollisionImpl02 : WaterFallCollision
     {
         timeElapsed += Time.deltaTime;
 
-        // コントローラを0.3sec振動させる
+        // コントローラを振動させる
         if (LeftHandInWaterFall)
         {
-            StartCoroutine(VibrationController.VibrateLeftFor(OBJECT_DETECT_THRESHOLD));
+            VibrationController.VibrateLeftFor(0.1f);
         }
         if (RightHandInWaterFall)
         {
-            StartCoroutine(VibrationController.VibrateRightFor(OBJECT_DETECT_THRESHOLD));
+            VibrationController.VibrateRightFor(0.1f);
         }
     }
 
@@ -99,7 +99,7 @@ public class WaterFallCollisionImpl02 : WaterFallCollision
         }
 
         var debugLog = name + "/" + obj.name + ": relativeDistance = " + relativeDistance + ", gain = " + gain + ", timeCollided = " + timeCollided;
-        Debug.Log(debugLog);
+        //Debug.Log(debugLog);
         OVRDebugConsole.Log(debugLog);
     }
 
